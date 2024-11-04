@@ -17,9 +17,15 @@
         "name": "next"
       }
     ],
+    // "paths": {
+    //   "@/*": ["./*"]
+    // }
     "paths": {
-      "@/*": ["./*"]
-    }
+  "@/app/*": ["./app/*"],
+  "@/components/*": ["./components/*"],
+  "@/utils/*": ["./utils/*"]
+}
+
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/billing/page.js"],
   "exclude": ["node_modules"]
