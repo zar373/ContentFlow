@@ -22,36 +22,8 @@ Ensure you have **Node.js** and **Git** installed on your machine.
 
 ### 🛠️ Clone the Project
 
+Clone the repository to your local machine:
+
 ```bash
 git clone https://github.com/your-username/ContentFlow.git
 cd ContentFlow
-
-
-### 🔧 Install Dependencies
-
-```bash
-npm install
-
-### 🚀 Run the Project
-
-Start the application in development mode:
-
-```bash
-npm start
-Your app will be running at http://localhost:3000.
-
-### 📦 Building for Production
-
-To build the app for production:
-
-```bash
-npm run build
-
-
-## 🤝 Contributing
-
-We welcome contributions! Feel free to fork the repository and create a pull request.
-
-Happy content creating! 🎉
-
-> **Note**: Replace `your-username` in the clone URL with your GitHub username.
