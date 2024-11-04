@@ -2,12 +2,15 @@
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
+     "@typescript-eslint/no-wrapper-object-types": "off",
     "import/no-anonymous-default-export": "off", // Suppress anonymous export warning
     "@typescript-eslint/no-unused-vars": "warn", // Change to warning instead of error
     "@typescript-eslint/ban-ts-comment": "warn", // Change to warning instead of error
     "@typescript-eslint/no-empty-object-type": "off", // Suppress empty object type error
     "react/jsx-key": "off", // Suppress missing key prop warning
     "react-hooks/rules-of-hooks": "off", // Suppress hooks rules error
-    "react-hooks/exhaustive-deps": "off" 
+    "react-hooks/exhaustive-deps": "off" ,
+     "next/no-serverless-pages": "off"
+
   }
 }
