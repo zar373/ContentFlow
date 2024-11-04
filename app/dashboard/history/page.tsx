@@ -52,14 +52,6 @@
 // // import React from "react";
 // // import { TEMPLATE } from "../_components/TemplateListSection";
 
-// export interface HISTORY {
-//     id: Number;
-//     formData: string;
-//     aiResponse: string;
-//     templateSlug: string;
-//     createdBy: string;
-//     createdAt: string;
-// }
 
 
 // async function History() {
@@ -217,6 +209,17 @@ import { useEffect, useState } from "react";
 import { db } from "@/utils/db"; // Adjust the import path as needed
 import { AIOutput } from "@/utils/schema";
 import dayjs from "dayjs"; // Optional: install dayjs with `npm install dayjs`
+
+
+export interface HISTORY {
+  id: Number;
+  formData: string;
+  aiResponse: string;
+  templateSlug: string;
+  createdBy: string;
+  createdAt: string;
+}
+
 
 interface AIOutputData {
   id: number;

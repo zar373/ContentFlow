@@ -6,6 +6,7 @@ import { useUser } from '@clerk/nextjs';
 import { eq } from 'drizzle-orm';
 import React, { useContext, useEffect, useState } from 'react';
 import { HISTORY } from '../history/page';
+// import * as history from '../history/page';
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 import { UpdateCreditUsageContext } from '@/app/(context)/UpdateCreditUsageContext';
 import Link from 'next/link'; // Import Link from Next.js
@@ -13,6 +14,7 @@ import Link from 'next/link'; // Import Link from Next.js
 function UsageTrack() {
     const { user } = useUser();
     const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
+
     const [maxWords, setMaxWords] = useState(10000);
     const { updateCreditUsage } = useContext(UpdateCreditUsageContext);
 
@@ -34,6 +36,7 @@ function UsageTrack() {
             .where(eq(AIOutput.createdBy, user?.primaryEmailAddress?.emailAddress));
         GetTotalUsage(result);
     };
+    
 
     const GetTotalUsage = (result: HISTORY[]) => {
         let total: number = 0;
