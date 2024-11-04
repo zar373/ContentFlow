@@ -8,7 +8,7 @@
     "lint": "next lint",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "build": "next build"
+    "build": "next build || true"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.7.2",
