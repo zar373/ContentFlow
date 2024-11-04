@@ -56,7 +56,3 @@ Then, deploy the generated build directory on your preferred platform.
 We welcome contributions! Feel free to fork the repository and create a pull request.
 
 Happy content creating! 🎉
-
-```bash
-Replace `your-username` in the clone URL with your GitHub username. This code includes emojis, styling, and formatted sections to make the README engaging and easy to follow.
-```
