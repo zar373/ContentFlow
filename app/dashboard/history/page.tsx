@@ -233,7 +233,7 @@ export default function HistoryPage() {
   useEffect(() => {
     // Fetch data from the database
     const fetchData = async () => {
-      const data = await db.select().from(AIOutput);
+      const data = await db.select().from(AIOutput) as AIOutputData[];
       setHistoryData(data);
     };
     

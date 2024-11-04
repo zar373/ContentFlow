@@ -3,19 +3,32 @@ import React, { useEffect, useState } from 'react'
 import TemplateCard from './TemplateCard'
 
 export interface TEMPLATE {
-    name:string,
-    desc:string,
-    icon:string,
+  name:string;
+    desc:string;
+    icon:string;
     category:string,
-    slug:string,
-    aiprompt:string,
-    form?:FORM[]
+    slug:string;
+    aiprompt:string | undefined;
+    form:({ label: string; field: string; name?: string; required?: boolean; })[];
 
 }
+
+
+
+// export interface TEMPLATE {
+//   name: string;
+//   desc: string;
+//   icon: string;
+//   category: string;
+//   slug: string;
+//   aiprompt: string;
+//   form: FORM[]; // Ensure this is defined correctly
+// }
+
 export interface FORM{
-  label:string,
-  field: string,
-  name:string,
+  label:string;
+  field: string;
+  name?:string;
   required?:boolean
 }
 function TemplateListSection({userSearchInput}:any) {
@@ -42,8 +55,8 @@ function TemplateListSection({userSearchInput}:any) {
     // </div>
   // )
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid--cols-4 gap-5 p-10">
-  {templateList.map((item: TEMPLATE, index: number) => (
-      <TemplateCard key={item.slug || index} {...item} />
+  {templateList.map((item, index) => (
+      <TemplateCard key={item.slug || index} {...item as TEMPLATE} aiprompt={item.aiprompt ?? ''}  />
   ))}
   </div>
   )

@@ -190,7 +190,7 @@ export default [
         category: 'Coding',
        
         slug: 'write-code',
-        aiPrompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
+        aiprompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
         form: [
             {
                 label: 'Enter description of code you want along with Programming Language',
@@ -208,7 +208,7 @@ export default [
         category: 'Coding',
        
         slug: 'explain-code',
-        aiPrompt: 'Depends on user codeDescription explain code line by line and give output in  in rich text editor format in code block ',
+        aiprompt: 'Depends on user codeDescription explain code line by line and give output in  in rich text editor format in code block ',
         form: [
             {
                 label: 'Enter code which you want to understand',
@@ -226,7 +226,7 @@ export default [
         category: 'code-bug-detector',
        
         slug: 'code-bug-detector',
-        aiPrompt: 'Depends on user codeInput find bug in code and give solution and give output in  in rich text editor format in code block ',
+        aiprompt: 'Depends on user codeInput find bug in code and give solution and give output in  in rich text editor format in code block ',
         form: [
             {
                 label: 'Enter code which you want to test bug',

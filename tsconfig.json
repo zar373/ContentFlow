@@ -17,17 +17,14 @@
         "name": "next"
       }
     ],
-    // "paths": {
-    //   "@/*": ["./*"]
-    // }
     "paths": {
       "@/app/*": ["./app/*"],
       "@/components/*": ["./components/*"],
       "@/utils/*": ["./utils/*"],
       "@/app/(data)/*": ["./app/(data)/*"],
-}
-
+      "@/lib/*": ["./lib/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/billing/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

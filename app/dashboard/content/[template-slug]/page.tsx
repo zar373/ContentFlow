@@ -27,6 +27,7 @@ interface PROPS {
 function CreateNewContent(props: PROPS) {
 
     const selectedTemplate: TEMPLATE | undefined = Templates?.find((item) => item.slug == props.params['template-slug']);
+
     const [loading,setLoading]=useState(false);
     const [aiOutput,setAiOutput]=useState<string>('');
     const {user}=useUser();
