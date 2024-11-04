@@ -21,9 +21,10 @@
     //   "@/*": ["./*"]
     // }
     "paths": {
-  "@/app/*": ["./app/*"],
-  "@/components/*": ["./components/*"],
-  "@/utils/*": ["./utils/*"]
+      "@/app/*": ["./app/*"],
+      "@/components/*": ["./components/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/app/(data)/*": ["./app/(data)/*"],
 }
 
   },
