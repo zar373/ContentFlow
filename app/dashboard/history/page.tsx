@@ -42,15 +42,15 @@
 // }
 
 
-// import Templates from "@/app/(data)/Templates";
-// import { Button } from "@/components/ui/button";
-// import { db } from "@/utils/db";
-// import { AIOutput } from "@/utils/schema";
-// import { currentUser } from "@clerk/nextjs/server";
-// import { desc, eq } from 'drizzle-orm';
-// import Image from "next/image";
-// import React from "react";
-// import { TEMPLATE } from "../_components/TemplateListSection";
+// // import Templates from "@/app/(data)/Templates";
+// // import { Button } from "@/components/ui/button";
+// // import { db } from "@/utils/db";
+// // import { AIOutput } from "@/utils/schema";
+// // import { currentUser } from "@clerk/nextjs/server";
+// // import { desc, eq } from 'drizzle-orm';
+// // import Image from "next/image";
+// // import React from "react";
+// // import { TEMPLATE } from "../_components/TemplateListSection";
 
 // export interface HISTORY {
 //     id: Number;
@@ -112,14 +112,187 @@
 
 // export default History;
 
-import React from 'react'
+// // app/dashboard/history/page.tsx
+// "use client";
 
-function HISTORY() {
-  return (
-    <div>
-      History
-    </div>
-  )
+// import { useEffect, useState } from "react";
+// import { db } from "@/utils/db"; // Adjust the import path as needed
+// import { AIOutput } from "@/utils/schema";
+
+// // Define the interface for AIOutput data
+// interface AIOutputData {
+//   id: number;
+//   formData: string;
+//   aiResponse: string;
+//   templateSlug: string;
+//   createdBy: string;
+//   createdAt: string;
+// }
+
+// // Function to handle date formatting and validation
+// const formatDate = (dateString: string) => {
+//   const date = new Date(dateString);
+//   return isNaN(date.getTime()) ? "Invalid Date" : date.toLocaleDateString();
+// };
+
+// // Map templateSlug to icon paths (assuming icons are in the /public/icons directory)
+// const iconMap: { [key: string]: string } = {
+//   "instagram-post-generator": "/icons/instagram-icon.png",
+//   "generate-blog-title": "/icons/blog-icon.png",
+//   "youtube-seo-title": "/icons/youtube-icon.png",
+//   "blog-content-generation": "/icons/content-icon.png",
+//   "add-emoji-to-text": "/icons/emoji-icon.png",
+//   // Add more mappings as needed
+// };
+
+// export default function HistoryPage() {
+//   const [historyData, setHistoryData] = useState<AIOutputData[]>([]);
+
+//   useEffect(() => {
+//     // Fetch data from the database
+//     const fetchData = async () => {
+//       const data = await db.select().from(AIOutput);
+//       setHistoryData(data);
+//     };
+    
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <main className="min-h-screen bg-white flex flex-col items-center p-8">
+//       <h1 className="text-4xl font-bold mb-4 text-center">History</h1>
+//       <p className="text-lg text-center text-gray-500 mb-8">
+//         Search your previously generated AI content
+//       </p>
+      
+//       <div className="w-full max-w-4xl">
+//         <table className="w-full border-collapse border border-gray-200">
+//           <thead>
+//             <tr className="bg-gray-100">
+//               <th className="border border-gray-200 p-4 text-left font-semibold">TEMPLATE</th>
+//               <th className="border border-gray-200 p-4 text-left font-semibold">AI RESP</th>
+//               <th className="border border-gray-200 p-4 text-left font-semibold">DATE</th>
+//               <th className="border border-gray-200 p-4 text-left font-semibold">WORDS</th>
+//               <th className="border border-gray-200 p-4 text-left font-semibold">COPY</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {historyData.map((entry) => (
+//               <tr key={entry.id} className="border-b border-gray-200">
+//                 <td className="border border-gray-200 p-4 flex items-center">
+//                   <img 
+//                     src={iconMap[entry.templateSlug] || "/icons/default-icon.png"} 
+//                     alt={`${entry.templateSlug} Icon`} 
+//                     className="w-6 h-6 mr-2"
+//                   />
+//                   <span>{entry.templateSlug}</span>
+//                 </td>
+//                 <td className="border border-gray-200 p-4 text-gray-700 max-w-xs truncate">
+//                   {entry.aiResponse}
+//                 </td>
+//                 <td className="border border-gray-200 p-4">
+//                   {formatDate(entry.createdAt)}
+//                 </td>
+//                 <td className="border border-gray-200 p-4 text-center">
+//                   {entry.aiResponse.split(" ").length}
+//                 </td>
+//                 <td 
+//                   className="border border-gray-200 p-4 text-blue-600 cursor-pointer hover:underline"
+//                   onClick={() => navigator.clipboard.writeText(entry.aiResponse)}
+//                 >
+//                   Copy
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </main>
+//   );
+// }
+
+"use client";
+
+import { useEffect, useState } from "react";
+import { db } from "@/utils/db"; // Adjust the import path as needed
+import { AIOutput } from "@/utils/schema";
+import dayjs from "dayjs"; // Optional: install dayjs with `npm install dayjs`
+
+interface AIOutputData {
+  id: number;
+  formData: string;
+  aiResponse: string;
+  templateSlug: string;
+  createdBy: string;
+  createdAt: string;
 }
 
-export default HISTORY
+export default function HistoryPage() {
+  const [historyData, setHistoryData] = useState<AIOutputData[]>([]);
+
+  useEffect(() => {
+    // Fetch data from the database
+    const fetchData = async () => {
+      const data = await db.select().from(AIOutput);
+      setHistoryData(data);
+    };
+    
+    fetchData();
+  }, []);
+
+  // Format date with a fallback for invalid dates
+  // Format date with specified input format for consistency
+  const formatDate = (dateString: string) => {
+    const date = dayjs(dateString, "DD/MM/yyyy"); // Ensure input format matches database date format
+    return date.isValid()
+      ? date.format("MM-DD-YYYY")  // Output format: "11-Nov-2024"
+      : "Invalid Date"; // Fallback text for invalid dates
+  };
+
+  return (
+    <main className="min-h-screen bg-white flex flex-col items-center p-8">
+      <h1 className="text-4xl font-bold mb-4 text-center">History</h1>
+      <p className="text-lg text-center text-gray-500 mb-8">
+        Search your previously generated AI content
+      </p>
+      
+      <div className="w-full max-w-4xl">
+        <table className="w-full border-collapse border border-gray-200">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="border border-gray-200 p-4 text-left font-semibold">TEMPLATE</th>
+              <th className="border border-gray-200 p-4 text-left font-semibold">AI RESP</th>
+              <th className="border border-gray-200 p-4 text-left font-semibold">DATE</th>
+              <th className="border border-gray-200 p-4 text-center font-semibold">WORDS</th>
+              <th className="border border-gray-200 p-4 text-center font-semibold">COPY</th>
+            </tr>
+          </thead>
+          <tbody>
+            {historyData.map((entry) => (
+              <tr key={entry.id} className="border-b border-gray-200">
+                <td className="border border-gray-200 p-4">
+                  <span>{entry.templateSlug}</span>
+                </td>
+                <td className="border border-gray-200 p-4 text-gray-700 max-w-xs truncate">
+                  {entry.aiResponse}
+                </td>
+                <td className="border border-gray-200 p-4">
+                  {formatDate(entry.createdAt)}
+                </td>
+                <td className="border border-gray-200 p-4 text-center">
+                  {entry.aiResponse.split(" ").length}
+                </td>
+                <td
+                  className="border border-gray-200 p-4 text-[#36C6D0] cursor-pointer hover:underline text-center"
+                  onClick={() => navigator.clipboard.writeText(entry.aiResponse)}
+                >
+                  Copy
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  );
+}

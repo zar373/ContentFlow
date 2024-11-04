@@ -63,6 +63,8 @@ function CreateNewContent(props: PROPS) {
         const result = await db.insert(AIOutput).values({
             formData: formData,
             templateSlug: slug,
+            
+        
             aiResponse: aiResp,
             createdBy: user?.primaryEmailAddress?.emailAddress,
             createdAt: moment().format('DD/MM/yyyy'),

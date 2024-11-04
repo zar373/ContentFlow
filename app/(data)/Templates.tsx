@@ -1,199 +1,242 @@
 export default [
     {
-        name:'Blog Title',
-        desc:'An AI tool that generate blog title depends on your blog information',
-        category:'Blog',
-        icon:'https://cdn-icons-png.flaticon.com/128/4186/4186534.png',
-        aiprompt:'Give me blog topic ideas in bullet wise only based on give niche & outline and give me result in Rich text editor format',
-        slug:'generate-blog-title',
-        form:[
+        name: 'Blog Title',
+        desc: 'An AI tool that generates blog titles based on your niche and outline.',
+        category: 'Blog',
+        icon: 'https://cdn-icons-png.flaticon.com/128/4186/4186534.png',
+        aiprompt: 'Give me blog topic ideas in bullet-wise only based on given niche & outline.',
+        slug: 'generate-blog-title',
+        form: [
             {
-                label:'Enter your blog niche',
+                label: 'Enter your blog niche',
                 field: 'input',
                 name: 'niche',
-                required:true            
+                required: true            
             },
             {   
-                label:'Enter blog outline',
-                field:'textarea',
-                name:'outline',
-    
-            }
-
-        ]
-
-    },
-    {
-        name:'Blog Content',
-        desc:'An AI tool that serves as your personal blog post title writer, generating catchy and viral Blog Topic Ideas ',
-        category:'blog',
-        icon:'https://cdn-icons-png.flaticon.com/128/9623/9623736.png',
-        slug:'blog-content-generation',
-        aiprompt:'Generate Blog Content based on topic and outline',
-        form:[
-            {
-                label:'Enter your blog topic',
-                field:'input',
-                name:'topic',
-                required:true
-            },
-            {
-                label:'Enter blog outline here',
-                field:'textarea',
-                name:'outline'
+                label: 'Enter blog outline',
+                field: 'textarea',
+                name: 'outline',
             }
         ]
     },
     {
-        name:'Blog Topic Ideas',
-        desc:'An AI tool that serves as your personal blog post title',
-        category:'Blog',
-        icon:'https://cdn-icons-png.flaticon.com/128/16117/16117845.png',
-        slug:'blog-topic-idea',
-        aiprompt:'Generate top 5 Blog Topic Ideas in bullet point only',
-        form:[
+        name: 'Blog Content',
+        desc: 'An AI tool that generates catchy blog content from your provided topic and outline.',
+        category: 'Blog',
+        icon: 'https://cdn-icons-png.flaticon.com/128/9623/9623736.png',
+        slug: 'blog-content-generation',
+        aiprompt: 'Generate Blog Content based on topic and outline.',
+        form: [
             {
-                label:'Enter your Niche',
-                field:'input',
-                name:'niche',
-                required:true
-            },
-        ]
-
-    },
-    {
-        name:'Youtube SEO Title',
-        desc:'An AI tool that serves as your personal blog post title',
-        category:'Youtube Tools',
-        icon:'https://cdn-icons-png.flaticon.com/128/1383/1383260.png',
-        slug:'youtube-seo-title',
-        aiprompt:'Give me Best SEO optimized high ranked 5 title idea',
-        form:[
-            {
-                label:'Enter your youtube video topic keywords',
-                field:'input',
-                name:'keywords',
-                required:true
+                label: 'Enter your blog topic',
+                field: 'input',
+                name: 'topic',
+                required: true
             },
             {
-                label:'Enter youtube description Outline here',
-                field:'textarea',
-                name:'outline',
-
-            }
-        ]
-
-    },
-    {
-        name:'Youtube Description',
-        desc:'An AI tool that serves as your personal blog post title',
-        category:'Youtube Tool',
-        icon:'https://cdn-icons-png.flaticon.com/128/1907/1907446.png',
-        slug:'youtube-description',
-        aiprompt:'Generate Youtube description with emoji under 4-5',
-        form:[
-            {
-                label:'Enter your blog topic/title',
-                field:'input',
-                name:'topic',
-                required:true
-            },
-            {
-                label:'Enter youtube Outline here',
-                field:'textarea',
-                name:'outline',
+                label: 'Enter blog outline here',
+                field: 'textarea',
+                name: 'outline'
             }
         ]
     },
     {
-        name:'Youtube Tags',
-        desc:'An AI tool that serves as your personal blog post title',
-        category:'Youtube Tool',
-        icon:'https://cdn-icons-png.flaticon.com/128/10884/10884883.png',
-        slug:'youtube-tag',
-        aiprompt:'Generate 10 Youtube tags in bulletpoint based on ',
-        form:[
+        name: 'Blog Topic Ideas',
+        desc: 'An AI tool that generates blog topic ideas based on your niche.',
+        category: 'Blog',
+        icon: 'https://cdn-icons-png.flaticon.com/128/16117/16117845.png',
+        slug: 'blog-topic-idea',
+        aiprompt: 'Generate top 5 Blog Topic Ideas in bullet points only.',
+        form: [
             {
-                label:'Enter your youtube title',
-                field:'input',
-                name:'title',
-                required:true
-            },
-            {
-                label:'Enter youtube video Outline here(Optional)',
-                field:'textarea',
-                name:'outline',
-
-            }
-        ]
-
-    },
-    {
-        name:'Rewrite Article (Plagiarism Free)',
-        desc:'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also',
-        category:'Rewriting Tool',
-        icon:'https://cdn-icons-png.flaticon.com/128/2992/2992156.png',
-        slug:'rewrite-article',
-        aiprompt:'Rewrite give article without any plagiarism in rich format',
-        form:[
-            {
-                label:'Provide your Article/Blogpost or any other ',
-                field:'texterea',
-                name:'article',
-                required:true
+                label: 'Enter your Niche',
+                field: 'input',
+                name: 'niche',
+                required: true
             },
         ]
     },
     {
-        name:'Text Improver',
-        desc:'This handy tool refines your writing, eliminating error and redundancies for a clear,',
-        category:'Writing Assistant',
-        icon:'https://cdn-icons-png.flaticon.com/128/10814/10814495.png',
-        slug:'text-improver',
-        aiprompt:'Given to TextToImprove, Rewrite text without any grammar mistake',
-        form:[
+        name: 'Youtube SEO Title',
+        desc: 'An AI tool that generates optimized titles for your YouTube videos.',
+        category: 'Youtube Tools',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1383/1383260.png',
+        slug: 'youtube-seo-title',
+        aiprompt: 'Give me the best SEO optimized title ideas.',
+        form: [
             {
-                label:'Enter text that you want to re-write or improve',
-                field:'texterea',
-                name:'textToImprove',
-                required:true
+                label: 'Enter your YouTube video topic keywords',
+                field: 'input',
+                name: 'keywords',
+                required: true
+            },
+            {
+                label: 'Enter YouTube description outline here',
+                field: 'textarea',
+                name: 'outline',
             }
         ]
     },
     {
-        name:'Add Emoji to Text',
-        desc:'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language',
-        category:'blog',
-        icon:'https://cdn-icons-png.flaticon.com/128/2584/2584606.png',
-        slug:'add-emoji-to-text',
-        aiprompt:'Add Emoji to outline text depends on outline and .. ',
-        form:[
+        name: 'Youtube Description',
+        desc: 'An AI tool that generates engaging YouTube descriptions based on your input.',
+        category: 'Youtube Tool',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1907/1907446.png',
+        slug: 'youtube-description',
+        aiprompt: 'Generate YouTube description with emojis in a concise format.',
+        form: [
             {
-                label:'Enter your text to add emojis',
-                field:'texterea',
-                name:'outline',
-                required:true
+                label: 'Enter your blog topic/title',
+                field: 'input',
+                name: 'topic',
+                required: true
+            },
+            {
+                label: 'Enter YouTube outline here',
+                field: 'textarea',
             }
         ]
-
     },
     {
-        name:'Instagram Post Generator',
-        desc:'An AI tool that serves as your personal blog post title',
-        category:'blog',
-        icon:'https://cdn-icons-png.flaticon.com/128/15713/15713420.png',
-        slug:'instagram-post-generator',
-        aiprompt:'Generate 3 Instagram post depends on a given keyword',
-        form:[
+        name: 'Youtube Tags',
+        desc: 'An AI tool that generates relevant tags for your YouTube videos.',
+        category: 'Youtube Tool',
+        icon: 'https://cdn-icons-png.flaticon.com/128/10884/10884883.png',
+        slug: 'youtube-tag',
+        aiprompt: 'Generate 10 YouTube tags based on your video title.',
+        form: [
             {
-                label:'Enter keywords for your post',
-                field:'input',
-                name:'keywords',
-                required:true
+                label: 'Enter your YouTube title',
+                field: 'input',
+                name: 'title',
+                required: true
+            },
+            {
+                label: 'Enter YouTube video outline here (Optional)',
+                field: 'textarea',
+                name: 'outline',
+            }
+        ]
+    },
+    {
+        name: 'Rewrite Article (Plagiarism Free)',
+        desc: 'An AI tool to rewrite articles or blog posts for originality.',
+        category: 'Rewriting Tool',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2992/2992156.png',
+        slug: 'rewrite-article',
+        aiprompt: 'Rewrite given article without plagiarism in rich format.',
+        form: [
+            {
+                label: 'Provide your Article/Blog post to rewrite',
+                field: 'textarea',
+                name: 'article',
+                required: true
             },
         ]
     },
-
+    {
+        name: 'Text Improver',
+        desc: 'This tool refines your writing by correcting errors and enhancing clarity.',
+        category: 'Writing Assistant',
+        icon: 'https://cdn-icons-png.flaticon.com/128/10814/10814495.png',
+        slug: 'text-improver',
+        aiprompt: 'Rewrite text without any grammar mistakes.',
+        form: [
+            {
+                label: 'Enter text to improve or rewrite',
+                field: 'textarea',
+                name: 'textToImprove',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Add Emoji to Text',
+        desc: 'An AI tool that adds emojis to your text for enhanced expressiveness.',
+        category: 'Blog',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2584/2584606.png',
+        slug: 'add-emoji-to-text',
+        aiprompt: 'Add emojis to the provided text based on the outline.',
+        form: [
+            {
+                label: 'Enter your text to add emojis',
+                field: 'textarea',
+                name: 'outline',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'Instagram Post Generator',
+        desc: 'An AI tool that generates Instagram post content based on keywords.',
+        category: 'Blog',
+        icon: 'https://cdn-icons-png.flaticon.com/128/15713/15713420.png',
+        slug: 'instagram-post-generator',
+        aiprompt: 'Generate 3 Instagram posts based on the given keywords.',
+        form: [
+            {
+                label: 'Enter keywords for your post',
+                field: 'input',
+                name: 'keywords',
+                required: true
+            },
+        ]
+    },
+    {
+        name: 'Write Code',
+        desc: 'AI Model to generate programming code in any language',
+        icon:'https://cdn-icons-png.flaticon.com/128/6062/6062646.png',
+        category: 'Coding',
+       
+        slug: 'write-code',
+        aiPrompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
+        form: [
+            {
+                label: 'Enter description of code you want along with Programming Language',
+                field: 'textarea',
+                name: 'codeDesscripton',
+                required:true
+            },
+           
+        ]
+    },
+    {
+        name: 'Explain Code',
+        desc: 'AI Model to explain programming code in any language',
+        icon:'https://cdn-icons-png.flaticon.com/128/8488/8488751.png',
+        category: 'Coding',
+       
+        slug: 'explain-code',
+        aiPrompt: 'Depends on user codeDescription explain code line by line and give output in  in rich text editor format in code block ',
+        form: [
+            {
+                label: 'Enter code which you want to understand',
+                field: 'textarea',
+                name: 'codeDesscripton',
+                required:true
+            },
+           
+        ]
+    },
+    {
+        name: 'Code Bug Detector',
+        desc: 'This tool analyzes your input, like error messages and code snippets, to pinpoint and fix bugs, offering detailed solutions and alternatives in a straightforward, user-friendly way.',
+        icon:'https://cdn-icons-png.flaticon.com/128/4426/4426267.png',
+        category: 'code-bug-detector',
+       
+        slug: 'code-bug-detector',
+        aiPrompt: 'Depends on user codeInput find bug in code and give solution and give output in  in rich text editor format in code block ',
+        form: [
+            {
+                label: 'Enter code which you want to test bug',
+                field: 'textarea',
+                name: 'codeInput',
+                required:true
+            },
+           
+        ]
+    }
 ]
 
 // export default  [
