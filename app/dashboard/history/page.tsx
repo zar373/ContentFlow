@@ -213,11 +213,11 @@ import dayjs from "dayjs"; // Optional: install dayjs with `npm install dayjs`
 
 export interface HISTORY {
   id: Number;
-  formData: string;
-  aiResponse: string;
+  formData: string | null;
+  aiResponse: string | null;
   templateSlug: string;
-  createdBy: string;
-  createdAt: string;
+  createdBy: string | null;
+  createdAt: string | null;
 }
 
 
