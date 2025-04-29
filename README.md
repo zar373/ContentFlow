@@ -52,6 +52,13 @@ npm run build
 ```
 Then, deploy the generated build directory on your preferred platform.
 
+### 🧪 Viewing Drizzle ORM Data
+This opens an interactive UI where you can explore tables, insert and edit data, and inspect your schema visually.
+
+```bash
+ npm run db:studio
+```
+
 ### 🤝 Contributing
 We welcome contributions! Feel free to fork the repository and create a pull request.
 
