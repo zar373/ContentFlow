@@ -34,7 +34,7 @@ export default function Home() {
           </Link>
         </div>
         <footer className="absolute bottom-4 text-center text-sm">
-          Created by Zargul,  Aleezah, Shoaib & Haris
+          Created by Aleezah, Haris, Shoaib, Zargul
         </footer>
       </main>
     );
